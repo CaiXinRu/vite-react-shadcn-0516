@@ -112,7 +112,7 @@ export function StationSelect() {
       <div></div>
       <div className="col-span-5 flex items-center">
         <p>區域：</p>
-        <Select onValueChange={(value) => setSelectedArea(value)}>
+        <Select value={selectedArea} onValueChange={(value) => setSelectedArea(value)}>
           <SelectTrigger className="w-[70%]">
             <SelectValue
               placeholder={selectedArea ? selectedArea : "選擇區域"}
