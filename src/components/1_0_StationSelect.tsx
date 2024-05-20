@@ -5,6 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
 import { ImageIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -97,8 +98,8 @@ export function StationSelect() {
       <div className="col-span-5 flex items-center">
         <p>城市：</p>
         <Select onValueChange={(value) => setCity(value)}>
-          <SelectTrigger className="w-[70%]">
-            <SelectValue placeholder="選擇區域" />
+          <SelectTrigger className="w-[77%]">
+            <SelectValue placeholder="選擇城市" />
           </SelectTrigger>
           <SelectContent>
             {cities.map((city) => (
@@ -112,11 +113,12 @@ export function StationSelect() {
       <div></div>
       <div className="col-span-5 flex items-center">
         <p>區域：</p>
-        <Select onValueChange={(value) => setSelectedArea(value)}>
-          <SelectTrigger className="w-[70%]">
-            <SelectValue
-              placeholder={selectedArea ? selectedArea : "選擇區域"}
-            />
+        <Select
+          value={selectedArea}
+          onValueChange={(value) => setSelectedArea(value)}
+        >
+          <SelectTrigger className="w-[77%]">
+            <SelectValue placeholder="選擇區域" />
           </SelectTrigger>
           <SelectContent>
             {areas?.map((area) => (
@@ -131,7 +133,7 @@ export function StationSelect() {
       <div className="col-span-5 flex items-center">
         <p>專案：</p>
         <Select>
-          <SelectTrigger className="w-[70%]">
+          <SelectTrigger className="w-[77%]">
             <SelectValue placeholder="選擇專案" />
           </SelectTrigger>
           <SelectContent>
@@ -143,8 +145,6 @@ export function StationSelect() {
           </SelectContent>
         </Select>
       </div>
-      <div className="col-span-5 flex items-center">搜尋站點：</div>
-      <></>
     </div>
   );
 }
