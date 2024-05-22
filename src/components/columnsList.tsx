@@ -19,14 +19,16 @@ export const columnsList: ColumnDef<CheckList>[] = [
   {
     id: "select",
     header: () => {
-      return <div>選擇</div>;
+      return <div className="flex justify-center">選取</div>;
     },
     cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
+      <div className="flex justify-center">
+        <Checkbox
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label="Select row"
+        />
+      </div>
     ),
     enableSorting: false,
     enableHiding: false,
@@ -47,7 +49,7 @@ export const columnsList: ColumnDef<CheckList>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("form")}</div>
+      <div className="flex justify-center ">{row.getValue("form")}</div>
     ),
   },
   {
@@ -148,11 +150,13 @@ export const columnsList: ColumnDef<CheckList>[] = [
   {
     accessorKey: "operation",
     header: () => {
-      return <div className="fix justify-center">操作</div>;
+      return <div className="flex justify-center">操作</div>;
     },
     cell: () => (
       <Link to="/test">
-        <div className="flex justify-center underline">GO</div>
+        <div className="flex justify-center underline rounded-md bg-slate-200">
+          GO
+        </div>
       </Link>
     ),
   },

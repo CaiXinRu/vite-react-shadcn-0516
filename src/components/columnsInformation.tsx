@@ -39,7 +39,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("manual")}</div>
+      <div className="flex justify-center rounded-md bg-slate-300">
+        {row.getValue("manual")}
+      </div>
     ),
   },
   {
@@ -58,7 +60,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("auto")}</div>
+      <div className="flex justify-center rounded-md bg-slate-300">
+        {row.getValue("auto")}
+      </div>
     ),
   },
   {
@@ -77,7 +81,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("classOne")}</div>
+      <div className="flex justify-center rounded-md bg-slate-300">
+        {row.getValue("classOne")}
+      </div>
     ),
   },
   {
@@ -96,7 +102,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("classTwo")}</div>
+      <div className="flex justify-center rounded-md bg-slate-300">
+        {row.getValue("classTwo")}
+      </div>
     ),
   },
   {
@@ -115,14 +123,16 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("fault")}</div>
+      <div className="flex justify-center rounded-md bg-slate-300">
+        {row.getValue("fault")}
+      </div>
     ),
   },
   {
     accessorKey: "case",
     header: ({ column }) => {
       return (
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <Button
             variant="ghost"
             size="icon"
@@ -134,22 +144,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex justify-center">{row.getValue("case")}</div>
+      <div className="flex justify-center rounded-md bg-slate-300">
+        {row.getValue("case")}
+      </div>
     ),
   },
-  //   {
-  //     accessorKey: "amount",
-  //     header: () => <div className="text-right">Amount</div>,
-  //     cell: ({ row }) => {
-  //       const amount = parseFloat(row.getValue("amount"));
-
-  //       // Format the amount as a dollar amount
-  //       const formatted = new Intl.NumberFormat("en-US", {
-  //         style: "currency",
-  //         currency: "USD",
-  //       }).format(amount);
-
-  //       return <div className="text-right font-medium">{formatted}</div>;
-  //     },
-  //   },
 ];
