@@ -14,47 +14,7 @@ export type Situation = {
   case: number | null;
 };
 
-// export const columns: ColumnDef<Payment>[] = [
-//   {
-//     accessorKey: "status",
-//     header: "Status",
-//     cell: ({ row }) => (
-//       <div className="capitalize">{row.getValue("status")}</div>
-//     ),
-//   },
-//   {
-//     accessorKey: "email",
-//     header: ({ column }) => {
-//       return (
-//         <Button
-//           variant="ghost"
-//           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-//         >
-//           Email
-//           <ArrowUpDown className="ml-2 h-4 w-4" />
-//         </Button>
-//       );
-//     },
-//     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-//   },
-//   {
-//     accessorKey: "amount",
-//     header: () => <div className="text-right">Amount</div>,
-//     cell: ({ row }) => {
-//       const amount = parseFloat(row.getValue("amount"));
-
-//       // Format the amount as a dollar amount
-//       const formatted = new Intl.NumberFormat("en-US", {
-//         style: "currency",
-//         currency: "USD",
-//       }).format(amount);
-
-//       return <div className="text-right font-medium">{formatted}</div>;
-//     },
-//   },
-// ];
-
-export const columns: ColumnDef<Situation>[] = [
+export const columnsInformation: ColumnDef<Situation>[] = [
   {
     accessorKey: "station",
     header: () => {
@@ -70,7 +30,7 @@ export const columns: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             手動
             {/* <ArrowUpDown className="ml-2 h-4 w-4" /> */}
@@ -90,7 +50,7 @@ export const columns: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             自動
           </Button>
@@ -109,7 +69,7 @@ export const columns: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             一級
           </Button>
@@ -128,7 +88,7 @@ export const columns: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             二級
           </Button>
@@ -147,7 +107,7 @@ export const columns: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             故障
           </Button>
@@ -166,7 +126,7 @@ export const columns: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             專案
           </Button>

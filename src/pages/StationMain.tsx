@@ -1,6 +1,6 @@
 import { StationInformation } from "@/components/1_0_StationInformation";
 import { Header } from "@/components/Header";
-import { Situation, columns } from "@/components/columns";
+import { Situation, columnsInformation } from "@/components/columnsInformation";
 import { useEffect, useState } from "react";
 
 async function getData(): Promise<Situation[]> {
@@ -283,7 +283,7 @@ export default function StationMain() {
   return (
     <>
       <Header />
-      <StationInformation columns={columns} data={data} />
+      <StationInformation columns={columnsInformation} data={data} />
     </>
   );
 }
