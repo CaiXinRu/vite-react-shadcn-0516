@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="w-full">
       <div className="w-6/12 h-screen my-1 mx-auto">
-        <BrowserRouter>
+        <BrowserRouter
+          basename={import.meta.env.DEV ? "/" : "/vite-react-shadcn-0516/"}
+        >
           <Routes>
             <Route path="/" element={<StationMain />} />
             <Route path="station-lists" element={<StationLists />} />
