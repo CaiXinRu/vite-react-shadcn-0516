@@ -1,19 +1,7 @@
-// columns.tsx (client component) will contain our column definitions.
-
 import { Button } from "@/components/ui/button";
+import { Situation } from "@/ts-common/types/mainStationTypes";
 import { ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
-
-export type Situation = {
-  id: string;
-  station: string;
-  manual: number | null;
-  auto: number | null;
-  classOne: number | null;
-  classTwo: number | null;
-  fault: number | null;
-  case: number | null;
-};
 
 export const columnsInformation: ColumnDef<Situation>[] = [
   {

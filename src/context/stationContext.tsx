@@ -1,20 +1,8 @@
+import {
+  Situation,
+  StationsContextType,
+} from "@/ts-common/types/mainStationTypes";
 import React, { createContext, useContext, useEffect, useState } from "react";
-
-interface Situation {
-  id: string;
-  station: string;
-  manual: number | null;
-  auto: number | null;
-  classOne: number | null;
-  classTwo: number | null;
-  fault: number | null;
-  case: number | null;
-}
-
-interface StationsContextType {
-  stations: Situation[];
-  fetchStations: () => void;
-}
 
 const StationsContext = createContext<StationsContextType | undefined>(
   undefined
