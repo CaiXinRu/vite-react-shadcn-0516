@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router-dom";
 
 export type Situation = {
   id: string;
@@ -20,7 +21,15 @@ export const columnsInformation: ColumnDef<Situation>[] = [
     header: () => {
       return <div className="pl-4">站點</div>;
     },
-    cell: ({ row }) => <div>{row.getValue("station")}</div>,
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div>{row.getValue("station")}</div>
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "manual",
@@ -33,16 +42,21 @@ export const columnsInformation: ColumnDef<Situation>[] = [
             onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
           >
             手動
-            {/* <ArrowUpDown className="ml-2 h-4 w-4" /> */}
           </Button>
         </div>
       );
     },
-    cell: ({ row }) => (
-      <div className="flex justify-center rounded-md bg-slate-300">
-        {row.getValue("manual")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div className="flex justify-center rounded-md bg-slate-300">
+            {row.getValue("manual")}
+          </div>
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "auto",
@@ -59,11 +73,17 @@ export const columnsInformation: ColumnDef<Situation>[] = [
         </div>
       );
     },
-    cell: ({ row }) => (
-      <div className="flex justify-center rounded-md bg-slate-300">
-        {row.getValue("auto")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div className="flex justify-center rounded-md bg-slate-300">
+            {row.getValue("auto")}
+          </div>
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "classOne",
@@ -80,11 +100,17 @@ export const columnsInformation: ColumnDef<Situation>[] = [
         </div>
       );
     },
-    cell: ({ row }) => (
-      <div className="flex justify-center rounded-md bg-slate-300">
-        {row.getValue("classOne")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div className="flex justify-center rounded-md bg-slate-300">
+            {row.getValue("classOne")}
+          </div>
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "classTwo",
@@ -101,11 +127,17 @@ export const columnsInformation: ColumnDef<Situation>[] = [
         </div>
       );
     },
-    cell: ({ row }) => (
-      <div className="flex justify-center rounded-md bg-slate-300">
-        {row.getValue("classTwo")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div className="flex justify-center rounded-md bg-slate-300">
+            {row.getValue("classTwo")}
+          </div>
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "fault",
@@ -122,11 +154,17 @@ export const columnsInformation: ColumnDef<Situation>[] = [
         </div>
       );
     },
-    cell: ({ row }) => (
-      <div className="flex justify-center rounded-md bg-slate-300">
-        {row.getValue("fault")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div className="flex justify-center rounded-md bg-slate-300">
+            {row.getValue("fault")}
+          </div>
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "case",
@@ -143,10 +181,16 @@ export const columnsInformation: ColumnDef<Situation>[] = [
         </div>
       );
     },
-    cell: ({ row }) => (
-      <div className="flex justify-center rounded-md bg-slate-300">
-        {row.getValue("case")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const situation = row.original;
+
+      return (
+        <Link to={`/station-lists/${situation.id}`}>
+          <div className="flex justify-center rounded-md bg-slate-300">
+            {row.getValue("case")}
+          </div>
+        </Link>
+      );
+    },
   },
 ];

@@ -29,7 +29,6 @@ import {
 } from "@tanstack/react-table";
 import { ImageIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -111,9 +110,7 @@ export function StationInformation<TData, TValue>({
   const [selectedArea, setSelectedArea] = useState<string>("");
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-
   const table = useReactTable({
     data,
     columns,
@@ -239,12 +236,10 @@ export function StationInformation<TData, TValue>({
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      <Link to="/station-lists">
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </Link>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </TableCell>
                   ))}
                 </TableRow>

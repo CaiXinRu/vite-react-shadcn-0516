@@ -1,4 +1,5 @@
 import { Menubar, MenubarMenu } from "@/components/ui/menubar";
+
 import {
   ArrowLeftIcon,
   FileTextIcon,
@@ -13,13 +14,19 @@ import { HeaderSheet } from "./HeaderSheet";
 const titles: { [key: string]: string } = {
   "/": "維護表單資訊",
   "/station-lists": "站點表列表",
-  "/test": "測試",
+  "/class-one": "一級保養單",
 };
 
 export function Header() {
   const location = useLocation();
   const pathname = location.pathname;
   const navigate = useNavigate();
+
+  let title = titles[pathname];
+
+  if (!title && pathname.startsWith("/station-lists/")) {
+    title = "站點表列表";
+  }
 
   return (
     <Menubar>
@@ -33,7 +40,7 @@ export function Header() {
                 <ArrowLeftIcon onClick={() => navigate(-1)} />
               </button>
             )}
-            <span className="ml-4 text-base">{titles[pathname]}</span>
+            <span className="ml-4 text-base">{title}</span>
           </div>
           <div className="flex space-x-4">
             {pathname === "/" && (
