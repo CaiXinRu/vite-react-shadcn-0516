@@ -1,4 +1,4 @@
-import { StationsProvider } from "@/context/stationContext";
+import Providers from "@/Providers";
 import ClassOne from "@/pages/ClassOne";
 import StationDetail from "@/pages/StationDetail";
 import StationLists from "@/pages/StationLists";
@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="max-w-3xl h-screen my-1 mx-auto">
-      <StationsProvider>
+      <Providers>
         <BrowserRouter
           basename={import.meta.env.DEV ? "/" : "/vite-react-shadcn-0516/"}
         >
@@ -19,7 +19,7 @@ function App() {
             <Route path="/station/:id" element={<StationDetail />} />
           </Routes>
         </BrowserRouter>
-      </StationsProvider>
+      </Providers>
     </div>
   );
 }

@@ -2,18 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { CheckList } from "@/ts-common/types/listTypes";
 import { ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
-
-export type CheckList = {
-  id: string;
-  form: string;
-  bikeNumber: number;
-  situation: "啟用" | "停用";
-  power: number;
-  bikeType: string;
-  barNumber: number | null;
-};
 
 export const columnsList: ColumnDef<CheckList>[] = [
   {
@@ -152,12 +143,16 @@ export const columnsList: ColumnDef<CheckList>[] = [
     header: () => {
       return <div className="flex justify-center">操作</div>;
     },
-    cell: () => (
-      <Link to="/test">
-        <div className="flex justify-center underline rounded-md bg-slate-200">
-          GO
-        </div>
-      </Link>
-    ),
+    cell: ({ row }) => {
+      const checkList = row.original;
+
+      return (
+        <Link to={`/station-lists/${checkList.id}`}>
+          <div className="flex justify-center underline rounded-md bg-slate-200">
+            GO
+          </div>
+        </Link>
+      );
+    },
   },
 ];

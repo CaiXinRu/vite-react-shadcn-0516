@@ -15,8 +15,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useStations } from "@/context/stationContext";
+import { CheckListProps } from "@/ts-common/types/listTypes";
 import {
-  ColumnDef,
+  // ColumnDef,
   SortingState,
   flexRender,
   getCoreRowModel,
@@ -26,11 +28,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useState } from "react";
-
-interface CheckListProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
+import { useParams } from "react-router-dom";
 
 export function StationList<TData, TValue>({
   columns,
@@ -55,14 +53,22 @@ export function StationList<TData, TValue>({
     },
   });
 
+  const { id } = useParams<{ id: string }>();
+  const { stations } = useStations();
+  const stationName = stations.find((station) => station.id === id);
+
+  if (!stationName) {
+    return <div>站點不存在</div>;
+  }
+
   return (
     <>
       <div className="my-3">
         <Input placeholder="搜尋站點" />
       </div>
       <div className="text-sm">
-        <span>站點</span>
-        <span> 500607001 - 捷運水安宮站</span>
+        <span className="text-slate-500 px-3">站點</span>
+        <span>{stationName?.station}</span>
       </div>
       <div className="my-3 ml-5 text-sm">
         <div className="grid grid-cols-9">
