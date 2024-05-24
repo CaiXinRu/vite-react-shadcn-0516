@@ -32,7 +32,9 @@ export const columnsList: ColumnDef<CheckList>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             表單
           </Button>
@@ -51,7 +53,9 @@ export const columnsList: ColumnDef<CheckList>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             車號
           </Button>
@@ -70,7 +74,9 @@ export const columnsList: ColumnDef<CheckList>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             狀態
           </Button>
@@ -89,7 +95,9 @@ export const columnsList: ColumnDef<CheckList>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             電量
           </Button>
@@ -108,7 +116,9 @@ export const columnsList: ColumnDef<CheckList>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             車種
           </Button>
@@ -127,7 +137,9 @@ export const columnsList: ColumnDef<CheckList>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             柱號
           </Button>
@@ -147,7 +159,7 @@ export const columnsList: ColumnDef<CheckList>[] = [
       const checkList = row.original;
 
       return (
-        <Link to={`/station-lists/${checkList.id}`}>
+        <Link to={`/station-lists/station-details/${checkList.id}`}>
           <div className="flex justify-center underline rounded-md bg-slate-200">
             GO
           </div>

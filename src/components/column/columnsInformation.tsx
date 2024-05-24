@@ -27,7 +27,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             手動
           </Button>
@@ -54,7 +56,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             自動
           </Button>
@@ -81,7 +85,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             一級
           </Button>
@@ -108,7 +114,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             二級
           </Button>
@@ -135,7 +143,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             故障
           </Button>
@@ -162,7 +172,9 @@ export const columnsInformation: ColumnDef<Situation>[] = [
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => column.toggleSorting(column.getIsSorted() !== "asc")}
+            onClick={() =>
+              column.toggleSorting(column.getIsSorted() !== "desc")
+            }
           >
             專案
           </Button>

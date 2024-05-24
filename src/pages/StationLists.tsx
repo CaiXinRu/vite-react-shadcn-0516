@@ -1,6 +1,6 @@
 import { StationList } from "@/components/1_2_StationList";
 import { Header } from "@/components/Header";
-import { columnsList } from "@/components/columnsList";
+import { columnsList } from "@/components/column/columnsList";
 import { useLists } from "@/context/listContext";
 
 export default function StationLists() {
