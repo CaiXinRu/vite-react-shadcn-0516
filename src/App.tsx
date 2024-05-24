@@ -1,6 +1,5 @@
 import Providers from "@/Providers";
-import ClassOne from "@/pages/ClassOne";
-import StationDetail from "@/pages/StationDetail";
+import StationDetails from "@/pages/StationDetails";
 import StationLists from "@/pages/StationLists";
 import StationMain from "@/pages/StationMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -15,8 +14,10 @@ function App() {
           <Routes>
             <Route path="/" element={<StationMain />} />
             <Route path="/station-lists/:id" element={<StationLists />} />
-            <Route path="/class-one" element={<ClassOne />} />
-            <Route path="/station/:id" element={<StationDetail />} />
+            <Route
+              path="/station-lists/station-details/:id"
+              element={<StationDetails />}
+            />
           </Routes>
         </BrowserRouter>
       </Providers>
