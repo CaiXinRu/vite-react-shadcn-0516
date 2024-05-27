@@ -10,10 +10,10 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       return <div className="pl-4">站點</div>;
     },
     cell: ({ row }) => {
-      const situation = row.original;
+      // const situation = row.original;
 
       return (
-        <Link to={`/station-lists/${situation.id}`}>
+        <Link to="/station-map">
           <div>{row.getValue("station")}</div>
         </Link>
       );
