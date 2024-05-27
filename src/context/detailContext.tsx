@@ -1,21 +1,9 @@
-interface DetailItem {
-  item: string;
-  situation: "調整" | "正常";
-}
+import { Detail, DetailsContextType } from "@/ts-common/types/detailTypes";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-interface Detail {
-  title:
-    | "車燈系統"
-    | "傳動系統"
-    | "煞車系統"
-    | "轉動系統"
-    | "停車鎖"
-    | "車架"
-    | "電控系統";
-  items: DetailItem[];
-}
+const DetailsContext = createContext<DetailsContextType | undefined>(undefined);
 
-async function getDetail(): Promise<Detail[]> {
+const getDetails = async (): Promise<Detail[]> => {
   return [
     {
       title: "車燈系統",
@@ -125,4 +113,33 @@ async function getDetail(): Promise<Detail[]> {
       ],
     },
   ];
-}
+};
+
+export const DetailsProviider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [details, setDetails] = useState<Detail[]>([]);
+
+  const fetchDetails = async () => {
+    const result = await getDetails();
+    setDetails(result);
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, []);
+
+  return (
+    <DetailsContext.Provider value={{ details, fetchDetails }}>
+      {children}
+    </DetailsContext.Provider>
+  );
+};
+
+export const useDetails = (): DetailsContextType => {
+  const context = useContext(DetailsContext);
+  if (!context) {
+    throw new Error("useDetails must be used within a DetailsProvider");
+  }
+  return context;
+};

@@ -11,7 +11,7 @@ const tabs: Tab[] = [
     label: "常用項目",
     content: <AccordionParents />,
   },
-  { label: "完整項目", content: <p>Tab 2 Content</p> },
+  { label: "完整項目", content: <AccordionParents /> },
 ];
 
 export function StationDetailDown() {
