@@ -14,7 +14,7 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<StationMain />} />
-            <Route path="/station-map" element={<StationMap />} />
+            <Route path="/station-map/:id" element={<StationMap />} />
             <Route path="/station-lists/:id" element={<StationLists />} />
             <Route
               path="/station-lists/station-details/:id"

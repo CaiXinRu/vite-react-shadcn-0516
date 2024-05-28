@@ -19,6 +19,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: 3,
       case: 5,
+      geoCode: [24.152727, 120.646965],
     },
     {
       id: "500607002",
@@ -29,6 +30,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: null,
       case: 9,
+      geoCode: [24.137711, 120.684791],
     },
     {
       id: "500607003",
@@ -39,6 +41,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: null,
       case: 2,
+      geoCode: [24.151735, 120.643304],
     },
     {
       id: "500607004",
@@ -49,6 +52,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 4,
       fault: 1,
       case: 3,
+      geoCode: [24.136829, 120.685589],
     },
     {
       id: "500607005",
@@ -59,6 +63,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 3,
       fault: 2,
       case: 4,
+      geoCode: [24.163366, 120.639815],
     },
     {
       id: "500607006",
@@ -69,6 +74,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: null,
       case: 1,
+      geoCode: [24.140424, 120.683872],
     },
     {
       id: "500607007",
@@ -79,6 +85,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 5,
       fault: 3,
       case: null,
+      geoCode: [24.149726, 120.662161],
     },
     {
       id: "500607008",
@@ -89,6 +96,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 2,
       fault: 4,
       case: 6,
+      geoCode: [24.157936, 120.664707],
     },
     {
       id: "500607009",
@@ -99,6 +107,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 6,
       fault: 1,
       case: 3,
+      geoCode: [24.179051, 120.649162],
     },
     {
       id: "500607010",
@@ -109,6 +118,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 3,
       fault: 2,
       case: null,
+      geoCode: [24.168195, 120.639045],
     },
     {
       id: "500607011",
@@ -119,6 +129,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 1,
       fault: 5,
       case: 7,
+      geoCode: [24.142557, 120.682398],
     },
     {
       id: "500607012",
@@ -129,6 +140,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: 2,
       case: 4,
+      geoCode: [24.179176, 120.600521],
     },
     {
       id: "500607013",
@@ -139,6 +151,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 3,
       fault: 1,
       case: 6,
+      geoCode: [24.156826, 120.641828],
     },
     {
       id: "500607014",
@@ -149,6 +162,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: null,
       case: 2,
+      geoCode: [24.154265, 120.664008],
     },
     {
       id: "500607015",
@@ -159,6 +173,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 5,
       fault: 3,
       case: null,
+      geoCode: [24.144187, 120.683083],
     },
     {
       id: "500607016",
@@ -169,6 +184,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 2,
       fault: 4,
       case: 6,
+      geoCode: [24.168195, 120.639045],
     },
     {
       id: "500607017",
@@ -179,6 +195,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 4,
       fault: 1,
       case: 3,
+      geoCode: [24.136814, 120.684624],
     },
     {
       id: "500607018",
@@ -189,6 +206,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 3,
       fault: 2,
       case: null,
+      geoCode: [24.268501, 120.574821],
     },
     {
       id: "500607019",
@@ -199,6 +217,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 1,
       fault: 5,
       case: 7,
+      geoCode: [24.101925, 120.678645],
     },
     {
       id: "500607020",
@@ -209,6 +228,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: 2,
       case: 4,
+      geoCode: [24.252062, 120.831417],
     },
     {
       id: "500607021",
@@ -219,6 +239,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 3,
       fault: 1,
       case: 6,
+      geoCode: [24.268422, 120.788186],
     },
     {
       id: "500607022",
@@ -229,6 +250,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: null,
       fault: null,
       case: 2,
+      geoCode: [24.142962, 120.681342],
     },
     {
       id: "500607023",
@@ -239,6 +261,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 5,
       fault: 3,
       case: null,
+      geoCode: [24.250276, 120.712032],
     },
     {
       id: "500607024",
@@ -249,6 +272,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 2,
       fault: 4,
       case: 6,
+      geoCode: [24.146898, 120.685878],
     },
     {
       id: "500607025",
@@ -259,6 +283,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 4,
       fault: 1,
       case: 3,
+      geoCode: [24.160921, 120.639919],
     },
     {
       id: "500607026",
@@ -269,6 +294,7 @@ const getStations = async (): Promise<Situation[]> => {
       classTwo: 3,
       fault: 2,
       case: null,
+      geoCode: [24.137519, 120.683036],
     },
   ];
 };

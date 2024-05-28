@@ -1,5 +1,4 @@
 import { Menubar, MenubarMenu } from "@/components/ui/menubar";
-
 import {
   ArrowLeftIcon,
   FileTextIcon,
@@ -13,8 +12,6 @@ import { HeaderSheet } from "./HeaderSheet";
 
 const titles: { [key: string]: string } = {
   "/": "維護表單資訊",
-  "/station-lists": "站點表列表",
-  "/class-one": "一級保養單",
 };
 
 export function Header() {
@@ -24,8 +21,12 @@ export function Header() {
 
   let title = titles[pathname];
 
-  if (!title && pathname.startsWith("/station-lists/")) {
+  if (!title && pathname.startsWith("/station-lists/station-details")) {
+    title = "細項表單";
+  } else if (pathname.startsWith("/station-lists")) {
     title = "站點表列表";
+  } else if (pathname.startsWith("/station-map")) {
+    title = "維護表單資訊（地圖）";
   }
 
   return (

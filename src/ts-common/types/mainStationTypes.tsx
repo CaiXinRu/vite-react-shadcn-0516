@@ -1,4 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
+import { LatLngExpression } from "leaflet";
 
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -14,6 +15,7 @@ export interface Situation {
   classTwo: number | null;
   fault: number | null;
   case: number | null;
+  geoCode: LatLngExpression;
 }
 
 export interface StationsContextType {
