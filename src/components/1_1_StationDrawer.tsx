@@ -1,12 +1,4 @@
 import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import { Situation } from "@/ts-common/types/mainStationTypes";
 import { Link } from "react-router-dom";
 
@@ -37,29 +29,24 @@ function renderGridValue(value: number | null) {
 
 export function StationDrawer({ stationName }: { stationName: Situation }) {
   return (
-    <Drawer>
-      <DrawerTrigger>Open</DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader>
-          <div className="flex items-center justify-between">
-            <DrawerTitle>{stationName?.station}</DrawerTitle>
-            <Link to={`/station-lists/${stationName.id}`}>
-              <Button>檢視站點</Button>
-            </Link>
-          </div>
-        </DrawerHeader>
-        <DrawerFooter>
-          <div className="grid grid-cols-6 grid-rows-2 mb-3">
-            {labels.map((label, index) => renderGridLabel(label, index))}
-            {renderGridValue(stationName?.manual)}
-            {renderGridValue(stationName?.auto)}
-            {renderGridValue(stationName?.classOne)}
-            {renderGridValue(stationName?.classTwo)}
-            {renderGridValue(stationName?.fault)}
-            {renderGridValue(stationName?.case)}
-          </div>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+    <>
+      <div className="h-1/5 bg-white p-5" style={{ zIndex: "1000" }}>
+        <div className="flex items-center justify-between">
+          <div className="text-lg">{stationName?.station}</div>
+          <Link to={`/station-lists/${stationName.id}`}>
+            <Button>檢視站點</Button>
+          </Link>
+        </div>
+        <div className="grid grid-cols-6 grid-rows-2 mb-3">
+          {labels.map((label, index) => renderGridLabel(label, index))}
+          {renderGridValue(stationName?.manual)}
+          {renderGridValue(stationName?.auto)}
+          {renderGridValue(stationName?.classOne)}
+          {renderGridValue(stationName?.classTwo)}
+          {renderGridValue(stationName?.fault)}
+          {renderGridValue(stationName?.case)}
+        </div>
+      </div>
+    </>
   );
 }

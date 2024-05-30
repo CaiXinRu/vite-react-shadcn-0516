@@ -1,9 +1,10 @@
 import Providers from "@/Providers";
+import MyMapComponent from "@/pages/MapTest";
 import StationDetails from "@/pages/StationDetails";
 import StationLists from "@/pages/StationLists";
 import StationMain from "@/pages/StationMain";
+import StationMap from "@/pages/StationMap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import StationMap from "./pages/StationMap";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               path="/station-lists/station-details/:id"
               element={<StationDetails />}
             />
+            <Route path="/my-map" element={<MyMapComponent />} />
           </Routes>
         </BrowserRouter>
       </Providers>

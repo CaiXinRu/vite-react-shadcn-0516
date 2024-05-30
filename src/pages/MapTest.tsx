@@ -13,7 +13,7 @@ import {
 
 const getIcon = (color: string): Icon => {
   return new L.Icon({
-    iconUrl: `/src/assets/markers/${color}.png`,
+    iconUrl: `./src/assets/markers/${color}.png`,
     iconSize: [25, 25],
     // iconAnchor: [12, 41],
     popupAnchor: [0, 0],
@@ -59,8 +59,10 @@ function LocationMarkerClick({
     <>
       <button
         onClick={handleButtonClick}
-        className="absolute right-2.5 bottom-5 bg-white text-lg"
         style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
           zIndex: 1000,
         }}
       >
@@ -100,7 +102,7 @@ function LocationMarker({
   );
 }
 
-export function StationOpenMap() {
+export default function MyMapComponent() {
   const { stations } = useStations();
   const [selectedStation, setSelectedStation] = useState<string | null>(null);
   const [mapCenter, setMapCenter] = useState<[number, number] | null>(null);

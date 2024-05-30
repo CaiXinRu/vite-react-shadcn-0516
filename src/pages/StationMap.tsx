@@ -2,7 +2,7 @@ import { StationDrawer } from "@/components/1_1_StationDrawer";
 import { StationOpenMap } from "@/components/1_1_StationOpenMap";
 import { Header } from "@/components/Header";
 import { useStations } from "@/context/stationContext";
-import { LatLngExpression } from "leaflet";
+// import { LatLngExpression } from "leaflet";
 import { useParams } from "react-router-dom";
 
 export default function StationMap() {
@@ -14,13 +14,13 @@ export default function StationMap() {
     return <div>站點不存在</div>;
   }
 
-  const location: LatLngExpression = stationName.geoCode;
+  // const location: LatLngExpression = stationName.geoCode;
 
   return (
     <>
       <Header />
+      <StationOpenMap />
       <StationDrawer stationName={stationName} />
-      <StationOpenMap location={location} stationName={stationName.station} />
     </>
   );
 }
