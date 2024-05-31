@@ -18,7 +18,7 @@ function renderGridLabel(label: string, index: number) {
 function renderGridValue(value: number | null) {
   return (
     <div
-      className={`flex justify-center items-center my-3 mx-auto w-1/2 rounded-md ${
+      className={`flex justify-center my-3 mx-auto w-1/2 rounded-md ${
         value ? "bg-slate-300" : ""
       }`}
     >

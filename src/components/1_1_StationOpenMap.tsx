@@ -1,3 +1,4 @@
+import { markerSign } from "@/context/markerSignContext";
 import { useStations } from "@/context/stationContext";
 import "@/f2eStyle/mapStyles.css";
 import L, { Icon, LatLng } from "leaflet";
@@ -75,7 +76,7 @@ function LocationMarkerClick({
 
   const handleButtonClick = () => {
     if (mapCenter) {
-      map.flyTo(mapCenter, 15);
+      map.flyTo(mapCenter, 14);
     }
   };
 
@@ -109,7 +110,7 @@ function LocationMarker({
     locationfound(e) {
       setPosition(e.latlng);
       setMapCenter(e.latlng);
-      map.flyTo(e.latlng, 15);
+      map.flyTo(e.latlng, 14);
     },
   });
 
@@ -131,57 +132,74 @@ export function StationOpenMap() {
 
   const handleMarkerClick = (id: string) => {
     setSelectedStation(id);
+    return stations.find((entry) => entry.id === id);
   };
 
   return (
-    <MapContainer
-      center={mapCenter || [23.6978, 120.9605]} // Default to Taiwan's lat/lng if mapCenter is not set
-      zoom={8}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {stations.map((station) => {
-        const total =
-          (station.manual || 0) +
-          (station.auto || 0) +
-          (station.classOne || 0) +
-          (station.classTwo || 0) +
-          (station.fault || 0) +
-          (station.case || 0);
-        let color = "blue";
-        if (total >= 16 && total <= 20) {
-          color = "green";
-        } else if (total >= 21 && total <= 25) {
-          color = "yellow";
-        } else if (total >= 26) {
-          color = "red";
-        }
-        if (selectedStation === station.id) {
-          color = "purple";
-        }
-        const icon = getIcon(color);
+    <>
+      <div className="h-14 bg-white p-3">
+        <div className="h-full grid grid-cols-5">
+          {markerSign.map((marker, index) => (
+            <div className="flex items-center justify-center" key={index}>
+              <img
+                src={`${marker.sign}`}
+                alt={`${marker.value}`}
+                width={"25px"}
+              />
+              &nbsp;&nbsp;{marker.value}
+            </div>
+          ))}
+        </div>
+      </div>
+      <MapContainer
+        center={mapCenter || [23.6978, 120.9605]} // Default to Taiwan's lat/lng if mapCenter is not set
+        zoom={8}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {stations.map((station) => {
+          const total =
+            (station.manual || 0) +
+            (station.auto || 0) +
+            (station.classOne || 0) +
+            (station.classTwo || 0) +
+            (station.fault || 0) +
+            (station.case || 0);
+          let color = "blue";
+          if (total >= 16 && total <= 20) {
+            color = "green";
+          } else if (total >= 21 && total <= 25) {
+            color = "yellow";
+          } else if (total >= 26) {
+            color = "red";
+          }
+          if (selectedStation === station.id) {
+            color = "purple";
+          }
+          const icon = getIcon(color);
 
-        return (
-          <Marker
-            key={station.id}
-            position={station.geoCode}
-            icon={icon}
-            eventHandlers={{
-              click: () => handleMarkerClick(station.id),
-            }}
-          >
-            <Popup>{station.station}</Popup>
-          </Marker>
-        );
-      })}
-      <LocationMarkerClick
-        mapCenter={mapCenter ? new LatLng(mapCenter[0], mapCenter[1]) : null}
-      />
-      <LocationMarker
-        setMapCenter={(latlng) => setMapCenter([latlng.lat, latlng.lng])}
-      />
-    </MapContainer>
+          return (
+            <Marker
+              key={station.id}
+              position={station.geoCode}
+              icon={icon}
+              eventHandlers={{
+                click: () => handleMarkerClick(station.id),
+              }}
+            >
+              <Popup>{station.station}</Popup>
+            </Marker>
+          );
+        })}
+        <LocationMarkerClick
+          mapCenter={mapCenter ? new LatLng(mapCenter[0], mapCenter[1]) : null}
+        />
+        <LocationMarker
+          setMapCenter={(latlng) => setMapCenter([latlng.lat, latlng.lng])}
+        />
+      </MapContainer>
+    </>
   );
 }
