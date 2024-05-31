@@ -13,7 +13,7 @@ import {
 
 const getIcon = (color: string): Icon => {
   return new L.Icon({
-    iconUrl: `/src/assets/markers/${color}.png`,
+    iconUrl: `/public/markers/${color}.png`,
     iconSize: [25, 25],
     // iconAnchor: [12, 41],
     popupAnchor: [0, 0],
