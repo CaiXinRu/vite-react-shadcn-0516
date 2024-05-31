@@ -10,10 +10,34 @@ import {
   TileLayer,
   useMapEvents,
 } from "react-leaflet";
+import blueMarker from "../../public/markers/blue.png";
+import greenMarker from "../../public/markers/green.png";
+import purpleMarker from "../../public/markers/purple.png";
+import redMarker from "../../public/markers/red.png";
+import yellowMarker from "../../public/markers/yellow.png";
 
 const getIcon = (color: string): Icon => {
+  let iconUrl;
+  switch (color) {
+    case "green":
+      iconUrl = greenMarker;
+      break;
+    case "yellow":
+      iconUrl = yellowMarker;
+      break;
+    case "red":
+      iconUrl = redMarker;
+      break;
+    case "purple":
+      iconUrl = purpleMarker;
+      break;
+    case "blue":
+    default:
+      iconUrl = blueMarker;
+      break;
+  }
   return new L.Icon({
-    iconUrl: `/public/markers/${color}.png`,
+    iconUrl: iconUrl,
     iconSize: [25, 25],
     // iconAnchor: [12, 41],
     popupAnchor: [0, 0],
