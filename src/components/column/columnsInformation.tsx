@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Situation } from "@/ts-common/types/mainStationTypes";
+import { Situation } from "@/types/mainStationTypes";
 import { ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export const columnsInformation: ColumnDef<Situation>[] = [
       const situation = row.original;
 
       return (
-        <Link to={`/station-map/${situation.id}`}>
+        <Link to={`/station-lists/${situation.id}`}>
           <div>{row.getValue("station")}</div>
         </Link>
       );

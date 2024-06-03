@@ -3,7 +3,6 @@ import MyMapComponent from "@/pages/MapTest";
 import StationDetails from "@/pages/StationDetails";
 import StationLists from "@/pages/StationLists";
 import StationMain from "@/pages/StationMain";
-import StationMap from "@/pages/StationMap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<StationMain />} />
-            <Route path="/station-map/:id" element={<StationMap />} />
             <Route path="/station-lists/:id" element={<StationLists />} />
             <Route
               path="/station-lists/station-details/:id"
