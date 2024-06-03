@@ -1,4 +1,4 @@
-import { MarkerSign } from "@/ts-common/types/markerSignTypes";
+import { MarkerSign } from "@/types/markerSignTypes";
 import blueMarker from "../../public/markers/blue.png";
 import greenMarker from "../../public/markers/green.png";
 import purpleMarker from "../../public/markers/purple.png";

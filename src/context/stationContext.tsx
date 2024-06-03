@@ -1,7 +1,4 @@
-import {
-  Situation,
-  StationsContextType,
-} from "@/ts-common/types/mainStationTypes";
+import { Situation, StationsContextType } from "@/types/mainStationTypes";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const StationsContext = createContext<StationsContextType | undefined>(

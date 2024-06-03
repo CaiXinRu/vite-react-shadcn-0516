@@ -16,7 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useStations } from "@/context/stationContext";
-import { CheckListProps } from "@/ts-common/types/listTypes";
+import { CheckListProps } from "@/types/listTypes";
 import {
   // ColumnDef,
   SortingState,
@@ -55,9 +55,9 @@ export function StationList<TData, TValue>({
 
   const { id } = useParams<{ id: string }>();
   const { stations } = useStations();
-  const stationName = stations.find((station) => station.id === id);
+  const stationStop = stations.find((station) => station.id === id);
 
-  if (!stationName) {
+  if (!stationStop) {
     return <div>站點不存在</div>;
   }
 
@@ -68,7 +68,7 @@ export function StationList<TData, TValue>({
       </div>
       <div className="text-sm">
         <span className="text-slate-500 px-3">站點</span>
-        <span>{stationName?.station}</span>
+        <span>{stationStop?.station}</span>
       </div>
       <div className="my-3 ml-5 text-sm">
         <div className="grid grid-cols-9">

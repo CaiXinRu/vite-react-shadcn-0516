@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { CheckList } from "@/ts-common/types/listTypes";
+import { CheckList } from "@/types/listTypes";
 import { ColumnDef } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
 

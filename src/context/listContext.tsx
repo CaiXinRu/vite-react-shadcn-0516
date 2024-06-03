@@ -1,4 +1,4 @@
-import { CheckList, ListsContextType } from "@/ts-common/types/listTypes";
+import { CheckList, ListsContextType } from "@/types/listTypes";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ListsContext = createContext<ListsContextType | undefined>(undefined);

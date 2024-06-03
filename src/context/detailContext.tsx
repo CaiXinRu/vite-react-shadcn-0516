@@ -1,4 +1,4 @@
-import { Detail, DetailsContextType } from "@/ts-common/types/detailTypes";
+import { Detail, DetailsContextType } from "@/types/detailTypes";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const DetailsContext = createContext<DetailsContextType | undefined>(undefined);

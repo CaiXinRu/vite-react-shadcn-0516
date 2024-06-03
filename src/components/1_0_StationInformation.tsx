@@ -16,7 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { areaMap, cases, cities } from "@/context/mainSelectContext";
-import { DataTableProps } from "@/ts-common/types/mainStationTypes";
+import { DataTableProps } from "@/types/mainStationTypes";
 import {
   // ColumnDef,
   ColumnFiltersState,

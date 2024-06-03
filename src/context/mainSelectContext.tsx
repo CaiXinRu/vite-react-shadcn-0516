@@ -1,4 +1,4 @@
-import { Area, Case, City } from "@/ts-common/types/mainSelectTypes.tsx";
+import { Area, Case, City } from "@/types/mainSelectTypes";
 
 export const cities: City[] = [
   { value: "taipei", label: "臺北" },
