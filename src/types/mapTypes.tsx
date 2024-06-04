@@ -15,3 +15,8 @@ export interface SetIdProps {
 export interface IdProps {
   id: string | null;
 }
+
+export interface MarkerSign {
+  sign: string;
+  value: string;
+}

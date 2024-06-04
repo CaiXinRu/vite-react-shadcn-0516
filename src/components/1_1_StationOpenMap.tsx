@@ -1,4 +1,4 @@
-import { markerSign } from "@/context/markerSignContext";
+import { markerSign } from "@/context/mapContext";
 import { useStations } from "@/context/stationContext";
 import "@/f2eStyle/mapStyles.css";
 import { SetIdProps } from "@/types/mapTypes";
