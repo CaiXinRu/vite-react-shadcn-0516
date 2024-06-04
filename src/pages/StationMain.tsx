@@ -1,7 +1,6 @@
 import { StationInformation } from "@/components/1_0_StationInformation";
 import { StationDrawer } from "@/components/1_1_StationDrawer";
 import { StationOpenMap } from "@/components/1_1_StationOpenMap";
-import { Header } from "@/components/Header";
 import { columnsInformation } from "@/components/column/columnsInformation";
 import { useStations } from "@/context/stationContext";
 import { useState } from "react";
@@ -40,7 +39,6 @@ export default function StationMain() {
 
   return (
     <>
-      <Header />
       <div className="grid grid-cols-2">
         {mainTabs.map((tab, index) => (
           <button

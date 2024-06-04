@@ -1,0 +1,35 @@
+.sheetbar {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 350px;
+  height: 100%;
+  background: rgb(71 85 105);
+  padding: 3rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  font-size: large;
+}
+
+.sheetbar.open {
+  left: 0;
+}
+
+.sheetbar .bar-content {
+  color: white;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 2rem;
+  border-bottom-width: 2px;
+  border-color: rgb(255 255 255);
+}
+
+.sheetbar .close-button {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  color: white;
+}

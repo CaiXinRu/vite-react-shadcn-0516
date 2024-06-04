@@ -1,28 +1,30 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { TextAlignJustifyIcon } from "@radix-ui/react-icons";
+import "@/f2eStyle/headerSheetStyle.css";
+import { HeaderSheetProps } from "@/types/headerTypes";
+import { sheetBars } from "@/utils/sheetBars";
+import { useNavigate } from "react-router-dom";
 
-export function HeaderSheet() {
+export default function HeaderSheet({ isOpen, onClose }: HeaderSheetProps) {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    onClose();
+  };
+
   return (
-    <Sheet>
-      <SheetTrigger>
-        <TextAlignJustifyIcon />
-      </SheetTrigger>
-      <SheetContent side={"left"}>
-        <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription>
-        </SheetHeader>
-      </SheetContent>
-    </Sheet>
+    <div className={`sheetbar ${isOpen ? "open" : ""}`}>
+      <button className="close-button" onClick={onClose}>
+        X
+      </button>
+      {sheetBars.map((bar, index) => (
+        <button
+          key={index}
+          className="bar-content"
+          onClick={() => handleNavigation(bar.path)}
+        >
+          {bar.value}
+        </button>
+      ))}
+    </div>
   );
 }

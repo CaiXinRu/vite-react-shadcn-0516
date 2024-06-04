@@ -1,5 +1,6 @@
 import { Menubar, MenubarMenu } from "@/components/ui/menubar";
 import { navigateToPreviousPage } from "@/utils/navigation";
+import { sheetBars } from "@/utils/sheetBars";
 import { getTitle } from "@/utils/titles";
 import {
   ArrowLeftIcon,
@@ -8,23 +9,32 @@ import {
   MagnifyingGlassIcon,
   PaddingIcon,
   ReloadIcon,
+  TextAlignJustifyIcon,
 } from "@radix-ui/react-icons";
 import { useLocation, useNavigate } from "react-router-dom";
-import { HeaderSheet } from "./HeaderSheet";
 
-export function Header() {
+interface HeaderProps {
+  onMenuClick: () => void;
+}
+
+export default function Header({ onMenuClick }: HeaderProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname;
   const title = getTitle(pathname);
+  const isSheetBarPath = sheetBars.some(
+    (sheetBar) => sheetBar.path === pathname
+  );
 
   return (
     <Menubar>
       <MenubarMenu>
         <div className="flex px-4 items-center w-full justify-between">
           <div className="flex items-center">
-            {pathname === "/" ? (
-              <HeaderSheet />
+            {isSheetBarPath ? (
+              <button onClick={onMenuClick}>
+                <TextAlignJustifyIcon />
+              </button>
             ) : (
               <button
                 onClick={() => navigateToPreviousPage(pathname, navigate)}
